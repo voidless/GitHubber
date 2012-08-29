@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84AF23AD15EE9792003FE221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AC15EE9792003FE221 /* UIKit.framework */; };
+		84AF23AF15EE9792003FE221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AE15EE9792003FE221 /* Foundation.framework */; };
+		84AF23B115EE9792003FE221 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23B015EE9792003FE221 /* CoreGraphics.framework */; };
+		84AF23B715EE9792003FE221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23B515EE9792003FE221 /* InfoPlist.strings */; };
+		84AF23B915EE9792003FE221 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23B815EE9792003FE221 /* main.m */; };
+		84AF23BD15EE9792003FE221 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23BC15EE9792003FE221 /* AppDelegate.m */; };
+		84AF23C015EE9792003FE221 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23BF15EE9792003FE221 /* MasterViewController.m */; };
+		84AF23C315EE9792003FE221 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23C215EE9792003FE221 /* DetailViewController.m */; };
+		84AF23C615EE9792003FE221 /* MasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23C415EE9792003FE221 /* MasterViewController_iPhone.xib */; };
+		84AF23C915EE9792003FE221 /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23C715EE9792003FE221 /* MasterViewController_iPad.xib */; };
+		84AF23CC15EE9792003FE221 /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23CA15EE9792003FE221 /* DetailViewController_iPhone.xib */; };
+		84AF23CF15EE9792003FE221 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23CD15EE9792003FE221 /* DetailViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84AF23A815EE9792003FE221 /* GitHubber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AF23AC15EE9792003FE221 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84AF23AE15EE9792003FE221 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84AF23B015EE9792003FE221 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		84AF23B415EE9792003FE221 /* GitHubber-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GitHubber-Info.plist"; sourceTree = "<group>"; };
+		84AF23B615EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84AF23B815EE9792003FE221 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84AF23BA15EE9792003FE221 /* GitHubber-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubber-Prefix.pch"; sourceTree = "<group>"; };
+		84AF23BB15EE9792003FE221 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84AF23BC15EE9792003FE221 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84AF23BE15EE9792003FE221 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		84AF23BF15EE9792003FE221 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		84AF23C115EE9792003FE221 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		84AF23C215EE9792003FE221 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		84AF23C515EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
+		84AF23C815EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
+		84AF23CB15EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		84AF23CE15EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84AF23A515EE9791003FE221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AF23AD15EE9792003FE221 /* UIKit.framework in Frameworks */,
+				84AF23AF15EE9792003FE221 /* Foundation.framework in Frameworks */,
+				84AF23B115EE9792003FE221 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84AF239D15EE9791003FE221 = {
+			isa = PBXGroup;
+			children = (
+				84AF23B215EE9792003FE221 /* GitHubber */,
+				84AF23AB15EE9792003FE221 /* Frameworks */,
+				84AF23A915EE9792003FE221 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84AF23A915EE9792003FE221 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84AF23A815EE9792003FE221 /* GitHubber.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84AF23AB15EE9792003FE221 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84AF23AC15EE9792003FE221 /* UIKit.framework */,
+				84AF23AE15EE9792003FE221 /* Foundation.framework */,
+				84AF23B015EE9792003FE221 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84AF23B215EE9792003FE221 /* GitHubber */ = {
+			isa = PBXGroup;
+			children = (
+				84AF23BB15EE9792003FE221 /* AppDelegate.h */,
+				84AF23BC15EE9792003FE221 /* AppDelegate.m */,
+				84AF23BE15EE9792003FE221 /* MasterViewController.h */,
+				84AF23BF15EE9792003FE221 /* MasterViewController.m */,
+				84AF23C115EE9792003FE221 /* DetailViewController.h */,
+				84AF23C215EE9792003FE221 /* DetailViewController.m */,
+				84AF23C415EE9792003FE221 /* MasterViewController_iPhone.xib */,
+				84AF23C715EE9792003FE221 /* MasterViewController_iPad.xib */,
+				84AF23CA15EE9792003FE221 /* DetailViewController_iPhone.xib */,
+				84AF23CD15EE9792003FE221 /* DetailViewController_iPad.xib */,
+				84AF23B315EE9792003FE221 /* Supporting Files */,
+			);
+			path = GitHubber;
+			sourceTree = "<group>";
+		};
+		84AF23B315EE9792003FE221 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84AF23B415EE9792003FE221 /* GitHubber-Info.plist */,
+				84AF23B515EE9792003FE221 /* InfoPlist.strings */,
+				84AF23B815EE9792003FE221 /* main.m */,
+				84AF23BA15EE9792003FE221 /* GitHubber-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84AF23A715EE9791003FE221 /* GitHubber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84AF23D215EE9792003FE221 /* Build configuration list for PBXNativeTarget "GitHubber" */;
+			buildPhases = (
+				84AF23A415EE9791003FE221 /* Sources */,
+				84AF23A515EE9791003FE221 /* Frameworks */,
+				84AF23A615EE9791003FE221 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GitHubber;
+			productName = GitHubber;
+			productReference = 84AF23A815EE9792003FE221 /* GitHubber.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84AF239F15EE9791003FE221 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 84AF23A215EE9791003FE221 /* Build configuration list for PBXProject "GitHubber" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84AF239D15EE9791003FE221;
+			productRefGroup = 84AF23A915EE9792003FE221 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84AF23A715EE9791003FE221 /* GitHubber */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84AF23A615EE9791003FE221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AF23B715EE9792003FE221 /* InfoPlist.strings in Resources */,
+				84AF23C615EE9792003FE221 /* MasterViewController_iPhone.xib in Resources */,
+				84AF23C915EE9792003FE221 /* MasterViewController_iPad.xib in Resources */,
+				84AF23CC15EE9792003FE221 /* DetailViewController_iPhone.xib in Resources */,
+				84AF23CF15EE9792003FE221 /* DetailViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84AF23A415EE9791003FE221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AF23B915EE9792003FE221 /* main.m in Sources */,
+				84AF23BD15EE9792003FE221 /* AppDelegate.m in Sources */,
+				84AF23C015EE9792003FE221 /* MasterViewController.m in Sources */,
+				84AF23C315EE9792003FE221 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84AF23B515EE9792003FE221 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AF23B615EE9792003FE221 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		84AF23C415EE9792003FE221 /* MasterViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AF23C515EE9792003FE221 /* en */,
+			);
+			name = MasterViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		84AF23C715EE9792003FE221 /* MasterViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AF23C815EE9792003FE221 /* en */,
+			);
+			name = MasterViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		84AF23CA15EE9792003FE221 /* DetailViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AF23CB15EE9792003FE221 /* en */,
+			);
+			name = DetailViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		84AF23CD15EE9792003FE221 /* DetailViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AF23CE15EE9792003FE221 /* en */,
+			);
+			name = DetailViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84AF23D015EE9792003FE221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84AF23D115EE9792003FE221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84AF23D315EE9792003FE221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GitHubber/GitHubber-Prefix.pch";
+				INFOPLIST_FILE = "GitHubber/GitHubber-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		84AF23D415EE9792003FE221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GitHubber/GitHubber-Prefix.pch";
+				INFOPLIST_FILE = "GitHubber/GitHubber-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84AF23A215EE9791003FE221 /* Build configuration list for PBXProject "GitHubber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AF23D015EE9792003FE221 /* Debug */,
+				84AF23D115EE9792003FE221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84AF23D215EE9792003FE221 /* Build configuration list for PBXNativeTarget "GitHubber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AF23D315EE9792003FE221 /* Debug */,
+				84AF23D415EE9792003FE221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84AF239F15EE9791003FE221 /* Project object */;
+}
