@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8447B82515F008C200111D08 /* AuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82215F008C200111D08 /* AuthController.m */; };
+		8447B82615F008C200111D08 /* RepositoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82415F008C200111D08 /* RepositoryListController.m */; };
+		8447B82B15F008D000111D08 /* AuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8447B82915F008D000111D08 /* AuthController.xib */; };
+		8447B82C15F008D000111D08 /* RepositoryListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8447B82A15F008D000111D08 /* RepositoryListController.xib */; };
+		8447B82E15F008DA00111D08 /* Options.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8447B82D15F008DA00111D08 /* Options.plist */; };
 		84AF23AD15EE9792003FE221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AC15EE9792003FE221 /* UIKit.framework */; };
 		84AF23AF15EE9792003FE221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AE15EE9792003FE221 /* Foundation.framework */; };
 		84AF23B115EE9792003FE221 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23B015EE9792003FE221 /* CoreGraphics.framework */; };
 		84AF23B715EE9792003FE221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23B515EE9792003FE221 /* InfoPlist.strings */; };
 		84AF23B915EE9792003FE221 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23B815EE9792003FE221 /* main.m */; };
 		84AF23BD15EE9792003FE221 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23BC15EE9792003FE221 /* AppDelegate.m */; };
-		84AF23C015EE9792003FE221 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23BF15EE9792003FE221 /* MasterViewController.m */; };
-		84AF23C315EE9792003FE221 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF23C215EE9792003FE221 /* DetailViewController.m */; };
-		84AF23C615EE9792003FE221 /* MasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23C415EE9792003FE221 /* MasterViewController_iPhone.xib */; };
-		84AF23C915EE9792003FE221 /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23C715EE9792003FE221 /* MasterViewController_iPad.xib */; };
-		84AF23CC15EE9792003FE221 /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23CA15EE9792003FE221 /* DetailViewController_iPhone.xib */; };
-		84AF23CF15EE9792003FE221 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AF23CD15EE9792003FE221 /* DetailViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8447B82115F008C200111D08 /* AuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthController.h; sourceTree = "<group>"; };
+		8447B82215F008C200111D08 /* AuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthController.m; sourceTree = "<group>"; };
+		8447B82315F008C200111D08 /* RepositoryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryListController.h; sourceTree = "<group>"; };
+		8447B82415F008C200111D08 /* RepositoryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryListController.m; sourceTree = "<group>"; };
+		8447B82915F008D000111D08 /* AuthController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthController.xib; sourceTree = "<group>"; };
+		8447B82A15F008D000111D08 /* RepositoryListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryListController.xib; sourceTree = "<group>"; };
+		8447B82D15F008DA00111D08 /* Options.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Options.plist; sourceTree = "<group>"; };
 		84AF23A815EE9792003FE221 /* GitHubber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AF23AC15EE9792003FE221 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84AF23AE15EE9792003FE221 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,14 +38,6 @@
 		84AF23BA15EE9792003FE221 /* GitHubber-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubber-Prefix.pch"; sourceTree = "<group>"; };
 		84AF23BB15EE9792003FE221 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84AF23BC15EE9792003FE221 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		84AF23BE15EE9792003FE221 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		84AF23BF15EE9792003FE221 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		84AF23C115EE9792003FE221 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		84AF23C215EE9792003FE221 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		84AF23C515EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
-		84AF23C815EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
-		84AF23CB15EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
-		84AF23CE15EE9792003FE221 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +54,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8447B80D15F0079E00111D08 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8447B82D15F008DA00111D08 /* Options.plist */,
+				84AF23BB15EE9792003FE221 /* AppDelegate.h */,
+				84AF23BC15EE9792003FE221 /* AppDelegate.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		8447B80E15F007A300111D08 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8447B82115F008C200111D08 /* AuthController.h */,
+				8447B82215F008C200111D08 /* AuthController.m */,
+				8447B82315F008C200111D08 /* RepositoryListController.h */,
+				8447B82415F008C200111D08 /* RepositoryListController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8447B82815F008C600111D08 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8447B82915F008D000111D08 /* AuthController.xib */,
+				8447B82A15F008D000111D08 /* RepositoryListController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		84AF239D15EE9791003FE221 = {
 			isa = PBXGroup;
 			children = (
@@ -86,16 +114,9 @@
 		84AF23B215EE9792003FE221 /* GitHubber */ = {
 			isa = PBXGroup;
 			children = (
-				84AF23BB15EE9792003FE221 /* AppDelegate.h */,
-				84AF23BC15EE9792003FE221 /* AppDelegate.m */,
-				84AF23BE15EE9792003FE221 /* MasterViewController.h */,
-				84AF23BF15EE9792003FE221 /* MasterViewController.m */,
-				84AF23C115EE9792003FE221 /* DetailViewController.h */,
-				84AF23C215EE9792003FE221 /* DetailViewController.m */,
-				84AF23C415EE9792003FE221 /* MasterViewController_iPhone.xib */,
-				84AF23C715EE9792003FE221 /* MasterViewController_iPad.xib */,
-				84AF23CA15EE9792003FE221 /* DetailViewController_iPhone.xib */,
-				84AF23CD15EE9792003FE221 /* DetailViewController_iPad.xib */,
+				8447B80E15F007A300111D08 /* Controllers */,
+				8447B82815F008C600111D08 /* Views */,
+				8447B80D15F0079E00111D08 /* Main */,
 				84AF23B315EE9792003FE221 /* Supporting Files */,
 			);
 			path = GitHubber;
@@ -163,10 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AF23B715EE9792003FE221 /* InfoPlist.strings in Resources */,
-				84AF23C615EE9792003FE221 /* MasterViewController_iPhone.xib in Resources */,
-				84AF23C915EE9792003FE221 /* MasterViewController_iPad.xib in Resources */,
-				84AF23CC15EE9792003FE221 /* DetailViewController_iPhone.xib in Resources */,
-				84AF23CF15EE9792003FE221 /* DetailViewController_iPad.xib in Resources */,
+				8447B82B15F008D000111D08 /* AuthController.xib in Resources */,
+				8447B82C15F008D000111D08 /* RepositoryListController.xib in Resources */,
+				8447B82E15F008DA00111D08 /* Options.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,8 +199,8 @@
 			files = (
 				84AF23B915EE9792003FE221 /* main.m in Sources */,
 				84AF23BD15EE9792003FE221 /* AppDelegate.m in Sources */,
-				84AF23C015EE9792003FE221 /* MasterViewController.m in Sources */,
-				84AF23C315EE9792003FE221 /* DetailViewController.m in Sources */,
+				8447B82515F008C200111D08 /* AuthController.m in Sources */,
+				8447B82615F008C200111D08 /* RepositoryListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,38 +213,6 @@
 				84AF23B615EE9792003FE221 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		84AF23C415EE9792003FE221 /* MasterViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84AF23C515EE9792003FE221 /* en */,
-			);
-			name = MasterViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		84AF23C715EE9792003FE221 /* MasterViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84AF23C815EE9792003FE221 /* en */,
-			);
-			name = MasterViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		84AF23CA15EE9792003FE221 /* DetailViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84AF23CB15EE9792003FE221 /* en */,
-			);
-			name = DetailViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		84AF23CD15EE9792003FE221 /* DetailViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84AF23CE15EE9792003FE221 /* en */,
-			);
-			name = DetailViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
