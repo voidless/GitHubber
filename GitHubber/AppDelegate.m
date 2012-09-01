@@ -48,6 +48,7 @@
     KeychainItem *keychain = [[KeychainItem alloc] initWithIdentifier:[NSBundle mainBundle].bundleIdentifier];
     AuthController *authController = [[AuthController alloc] initWithKeychainItem:keychain];
     navigationController = [[UINavigationController alloc] initWithRootViewController:authController];
+    navigationController.navigationBarHidden = NO;
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navigationController;

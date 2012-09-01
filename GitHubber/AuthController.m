@@ -42,10 +42,14 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [objectManager.requestQueue cancelRequestsWithDelegate:self];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
     self.title = @"GitHubber";
 
     if (authorization) {

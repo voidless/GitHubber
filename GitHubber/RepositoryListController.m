@@ -7,16 +7,28 @@
 
 @implementation RepositoryListController {
     NSArray *repositories;
+    RKObjectManager *objectManager;
 }
 @synthesize tableView;
+
+- (id)init
+{
+    if ((self = [super init])) {
+        objectManager = [RKObjectManager sharedManager];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [objectManager.requestQueue cancelRequestsWithDelegate:self];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = NO;
     self.title = @"Repositories";
 
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [objectManager loadObjectsAtResourcePath:@"/user/repos" delegate:self];
 }
 
