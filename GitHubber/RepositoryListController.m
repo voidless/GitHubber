@@ -13,6 +13,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
+    self.title = @"Repositories";
 
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [objectManager loadObjectsAtResourcePath:@"/user/repos" delegate:self];
@@ -26,14 +28,8 @@
 
 #pragma mark RKObjectLoaderDelegate
 
-- (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response
-{
-    NSLog(@"Loaded payload: %@", [response bodyAsString]);
-}
-
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    NSLog(@"Loaded repos: %@", objects);
     repositories = objects;
     [tableView reloadData];
 }

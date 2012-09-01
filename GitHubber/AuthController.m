@@ -1,21 +1,38 @@
 #import "AuthController.h"
 #import "RepositoryListController.h"
 #import "Authorization.h"
+#import "KeychainItem.h"
 #import <RestKit/RestKit.h>
 
 @interface AuthController () <UITextFieldDelegate, RKObjectLoaderDelegate>
 @end
 
 @implementation AuthController {
+    Authorization *authorization;
     RKObjectManager *objectManager;
     CGFloat keyboardHeight;
+    KeychainItem *keychainItem;
 }
 @synthesize scrollView;
-@synthesize contentView;
 @synthesize authView;
+@synthesize authFormView;
+@synthesize loggedView;
+@synthesize loadingView;
 @synthesize loginTextField;
 @synthesize passwordTextField;
 @synthesize loginButton;
+
+- (id)initWithKeychainItem:(KeychainItem *)keychain
+{
+    if ((self = [self init])) {
+        keychainItem = keychain;
+        id auth = keychainItem.object;
+        if ([auth isKindOfClass:[Authorization class]]) {
+            [self setupManagerWithAuth:auth];
+        }
+    }
+    return self;
+}
 
 - (id)init
 {
@@ -28,10 +45,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [scrollView addSubview:contentView];
-    scrollView.contentSize = contentView.frame.size;
-
     self.navigationController.navigationBarHidden = YES;
+    self.title = @"GitHubber";
+
+    if (authorization) {
+        [self loggedIn];
+    } else {
+        [self loggedOut];
+    }
 }
 
 - (void)viewDidUnload
@@ -40,26 +61,70 @@
     [self setPasswordTextField:nil];
     [self setLoginButton:nil];
     [self setScrollView:nil];
-    [self setContentView:nil];
     [self setAuthView:nil];
+    [self setAuthFormView:nil];
+    [self setLoggedView:nil];
+    [self setLoadingView:nil];
     [super viewDidUnload];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
     [self registerKeyboardNotifications];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-
     [self unregisterKeyboardNotifications];
 }
 
 #pragma mark Private
+
+- (void)setupManagerWithAuth:(Authorization *)auth
+{
+    authorization = auth;
+
+    objectManager.client.authenticationType = RKRequestAuthenticationTypeOAuth2;
+    objectManager.client.OAuth2AccessToken = authorization.token;
+}
+
+- (void)showRepositoryList
+{
+    RepositoryListController *ctrl = [RepositoryListController new];
+    [self.navigationController pushViewController:ctrl animated:YES];
+}
+
+- (void)loggedIn
+{
+    [authView removeFromSuperview];
+    loadingView.hidden = YES;
+
+    [scrollView addSubview:loggedView];
+    CGRect rect = self.scrollView.bounds;
+    loggedView.frame = rect;
+    scrollView.contentSize = rect.size;
+    [self showRepositoryList];
+}
+
+- (void)loggedOut
+{
+    [loggedView removeFromSuperview];
+    loadingView.hidden = YES;
+
+    [scrollView addSubview:authView];
+    CGRect rect = self.scrollView.bounds;
+    loggedView.frame = rect;
+    scrollView.contentSize = rect.size;
+}
+
+- (void)loading
+{
+    [authView removeFromSuperview];
+    [loggedView removeFromSuperview];
+    loadingView.hidden = NO;
+}
 
 - (void)checkInput
 {
@@ -68,7 +133,12 @@
 
 #pragma mark Actions
 
-- (IBAction)signIn:(UIButton *)sender
+- (IBAction)showRepositories:(UIButton *)sender
+{
+    [self showRepositoryList];
+}
+
+- (IBAction)logIn:(UIButton *)sender
 {
     objectManager.client.authenticationType = RKRequestAuthenticationTypeHTTPBasic;
     objectManager.client.username = loginTextField.text;
@@ -78,31 +148,36 @@
     auth.note = @"GitHubber";
     auth.scopes = [NSArray arrayWithObjects:@"repo", nil];
     [objectManager postObject:auth delegate:self];
+    [self loading];
+}
+
+- (IBAction)logOut:(UIButton *)sender
+{
+    authorization = nil;
+    [keychainItem delete];
+    [self loggedOut];
 }
 
 - (IBAction)resignEditing:(id)sender
 {
-    [contentView endEditing:NO];
+    [authView endEditing:NO];
 }
 
 #pragma mark RKObjectLoaderDelegate
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObject:(Authorization *)auth
 {
-    NSLog(@"Loaded auth: %@", auth);
-    //TODO: save auth token
-    objectManager.client.authenticationType = RKRequestAuthenticationTypeOAuth2;
-    objectManager.client.OAuth2AccessToken = auth.token;
-
-    RepositoryListController *repositoryListController = [RepositoryListController new];
-    [self.navigationController pushViewController:repositoryListController animated:YES];
+    keychainItem.object = auth;
+    [self setupManagerWithAuth:auth];
+    [self loggedIn];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    NSLog(@"Hit error: %@", error);
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+    NSLog(@"Hit error: %@", error);
+    [self loggedOut];
 }
 
 #pragma mark UITextFieldDelegate
@@ -110,7 +185,7 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     dispatch_async(dispatch_get_current_queue(), ^{
-        [self.scrollView scrollRectToVisible:authView.frame animated:YES];
+        [self.scrollView scrollRectToVisible:authFormView.frame animated:YES];
     });
     return YES;
 }

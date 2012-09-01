@@ -2,7 +2,7 @@
 
 @class RKObjectMapping;
 
-@interface Authorization : NSObject
+@interface Authorization : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) NSString *token;

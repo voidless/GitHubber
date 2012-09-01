@@ -1,9 +1,11 @@
 #import "AppDelegate.h"
-#import "AuthController.h"
-#import "Repository.h"
-#import "Authorization.h"
 #import "RestKit.h"
 #import "RKErrorMessage.h"
+#import "KeychainItem.h"
+#import "User.h"
+#import "Repository.h"
+#import "Authorization.h"
+#import "AuthController.h"
 
 @implementation AppDelegate
 
@@ -29,6 +31,9 @@
     [errorMapping mapKeyPath:@"message" toAttribute:@"errorMessage"];
     objectManager.mappingProvider.errorMapping = errorMapping;
 
+    [objectManager.mappingProvider setObjectMapping:[User objectMapping] forResourcePathPattern:@"/user"];
+    [objectManager.router routeClass:[User class] toResourcePath:@"/user" forMethod:RKRequestMethodGET];
+
     RKObjectMapping *repoMapping = [Repository objectMapping];
     [objectManager.mappingProvider setObjectMapping:repoMapping forResourcePathPattern:@"/user/repos"];
     [objectManager.mappingProvider setObjectMapping:repoMapping forResourcePathPattern:@"/users/:user/repos"];
@@ -36,18 +41,16 @@
     [objectManager.mappingProvider setObjectMapping:[Authorization objectMapping] forResourcePathPattern:@"/authorizations"];
     [objectManager.mappingProvider setSerializationMapping:[Authorization inverseMapping] forClass:[Authorization class]];
 
-    RKObjectRouter *router = objectManager.router;
-    [router routeClass:[Authorization class] toResourcePath:@"/authorizations" forMethod:RKRequestMethodGET];
-    [router routeClass:[Authorization class] toResourcePath:@"/authorizations" forMethod:RKRequestMethodPOST];
+    [objectManager.router routeClass:[Authorization class] toResourcePath:@"/authorizations" forMethod:RKRequestMethodGET];
+    [objectManager.router routeClass:[Authorization class] toResourcePath:@"/authorizations" forMethod:RKRequestMethodPOST];
 
 
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    AuthController *authController = [AuthController new];
+    KeychainItem *keychain = [[KeychainItem alloc] initWithIdentifier:[NSBundle mainBundle].bundleIdentifier];
+    AuthController *authController = [[AuthController alloc] initWithKeychainItem:keychain];
     navigationController = [[UINavigationController alloc] initWithRootViewController:authController];
 
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navigationController;
-
     [self.window makeKeyAndVisible];
     return YES;
 }

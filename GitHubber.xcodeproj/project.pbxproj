@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		586030310E8FB8A81F352B38 /* Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 586037BF5ED2F535F31A089F /* Authorization.m */; };
+		5860389D3EC5BFFF69478C85 /* KeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 586036E846816016026B13EA /* KeychainItem.m */; };
 		8447B82515F008C200111D08 /* AuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82215F008C200111D08 /* AuthController.m */; };
 		8447B82615F008C200111D08 /* RepositoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82415F008C200111D08 /* RepositoryListController.m */; };
 		8447B82B15F008D000111D08 /* AuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8447B82915F008D000111D08 /* AuthController.xib */; };
@@ -77,7 +78,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		586036E846816016026B13EA /* KeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItem.m; sourceTree = "<group>"; };
 		586037BF5ED2F535F31A089F /* Authorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authorization.m; sourceTree = "<group>"; };
+		58603967CABCA46638B83B5E /* KeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItem.h; sourceTree = "<group>"; };
 		58603A7E3D486FD6A1A886E9 /* Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authorization.h; sourceTree = "<group>"; };
 		8447B82115F008C200111D08 /* AuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthController.h; sourceTree = "<group>"; };
 		8447B82215F008C200111D08 /* AuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthController.m; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 		8497387315F2047000B2A4B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				586036E846816016026B13EA /* KeychainItem.m */,
+				58603967CABCA46638B83B5E /* KeychainItem.h */,
 				586037BF5ED2F535F31A089F /* Authorization.m */,
 				58603A7E3D486FD6A1A886E9 /* Authorization.h */,
 				8497387415F2048A00B2A4B7 /* Repository.h */,
@@ -361,6 +366,7 @@
 				8497387615F2048A00B2A4B7 /* Repository.m in Sources */,
 				8497387915F2077300B2A4B7 /* User.m in Sources */,
 				586030310E8FB8A81F352B38 /* Authorization.m in Sources */,
+				5860389D3EC5BFFF69478C85 /* KeychainItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
