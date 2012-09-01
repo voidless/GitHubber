@@ -5,6 +5,7 @@
 @implementation CommitCell {
     NSDateFormatter *dateFormatter;
 }
+@synthesize hashLabel;
 @synthesize messageLabel;
 @synthesize authorLabel;
 @synthesize dateLabel;
@@ -22,6 +23,7 @@
 {
     commit = _commit;
 
+    hashLabel.text = commit.sha;
     messageLabel.text = commit.message;
     authorLabel.text = commit.author.login;
     dateLabel.text = [dateFormatter stringFromDate:commit.date];
