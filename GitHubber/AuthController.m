@@ -2,7 +2,7 @@
 #import "RepositoryListController.h"
 #import "Authorization.h"
 #import "KeychainItem.h"
-#import <RestKit/RestKit.h>
+#import "RestKit.h"
 
 @interface AuthController () <UITextFieldDelegate, RKObjectLoaderDelegate>
 @end
@@ -180,7 +180,7 @@
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
-    NSLog(@"Hit error: %@", error);
+    NSLog(@"Error creating auth token: %@", error);
     [self loggedOut];
 }
 

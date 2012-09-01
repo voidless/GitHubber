@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		586030310E8FB8A81F352B38 /* Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 586037BF5ED2F535F31A089F /* Authorization.m */; };
+		586031E333224417B7E8B77F /* Gravatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860373888E1C3121E731611 /* Gravatar.m */; };
 		5860389D3EC5BFFF69478C85 /* KeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 586036E846816016026B13EA /* KeychainItem.m */; };
+		58603F685483191FD7C262D4 /* Singletons.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860314C9881608E0ABA952D /* Singletons.m */; };
 		8447B82515F008C200111D08 /* AuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82215F008C200111D08 /* AuthController.m */; };
 		8447B82615F008C200111D08 /* RepositoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82415F008C200111D08 /* RepositoryListController.m */; };
 		8447B82B15F008D000111D08 /* AuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8447B82915F008D000111D08 /* AuthController.xib */; };
@@ -24,6 +26,9 @@
 		8447B85415F00BC500111D08 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8447B83B15F00AFF00111D08 /* libRestKit.a */; };
 		8497387615F2048A00B2A4B7 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497387515F2048A00B2A4B7 /* Repository.m */; };
 		8497387915F2077300B2A4B7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497387815F2077300B2A4B7 /* User.m */; };
+		849738D415F2765E00B2A4B7 /* RepositoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849738D315F2765E00B2A4B7 /* RepositoryController.m */; };
+		849738D615F276E600B2A4B7 /* RepositoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849738D515F276E600B2A4B7 /* RepositoryController.xib */; };
+		8497395415F28C6C00B2A4B7 /* libiphone_web.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497391415F285DE00B2A4B7 /* libiphone_web.a */; };
 		84AF23AD15EE9792003FE221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AC15EE9792003FE221 /* UIKit.framework */; };
 		84AF23AF15EE9792003FE221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AE15EE9792003FE221 /* Foundation.framework */; };
 		84AF23B115EE9792003FE221 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23B015EE9792003FE221 /* CoreGraphics.framework */; };
@@ -75,10 +80,28 @@
 			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
 		};
+		8497391315F285DE00B2A4B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8497390B15F285DE00B2A4B7 /* iphone_web.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = iphone_web;
+		};
+		8497391515F285DE00B2A4B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8497390B15F285DE00B2A4B7 /* iphone_web.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B48FA1A0155E660E00A8597D;
+			remoteInfo = mac_web;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5860304ADB0F269270DB73C7 /* Gravatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gravatar.h; sourceTree = "<group>"; };
+		5860314C9881608E0ABA952D /* Singletons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singletons.m; sourceTree = "<group>"; };
+		58603336189D90E2165C315E /* Singletons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singletons.h; sourceTree = "<group>"; };
 		586036E846816016026B13EA /* KeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItem.m; sourceTree = "<group>"; };
+		5860373888E1C3121E731611 /* Gravatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gravatar.m; sourceTree = "<group>"; };
 		586037BF5ED2F535F31A089F /* Authorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authorization.m; sourceTree = "<group>"; };
 		58603967CABCA46638B83B5E /* KeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItem.h; sourceTree = "<group>"; };
 		58603A7E3D486FD6A1A886E9 /* Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authorization.h; sourceTree = "<group>"; };
@@ -101,6 +124,10 @@
 		8497387515F2048A00B2A4B7 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		8497387715F2077300B2A4B7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		8497387815F2077300B2A4B7 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		849738D215F2765E00B2A4B7 /* RepositoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryController.h; sourceTree = "<group>"; };
+		849738D315F2765E00B2A4B7 /* RepositoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryController.m; sourceTree = "<group>"; };
+		849738D515F276E600B2A4B7 /* RepositoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryController.xib; sourceTree = "<group>"; };
+		8497390B15F285DE00B2A4B7 /* iphone_web.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iphone_web.xcodeproj; path = iphone_web/iphone_web.xcodeproj; sourceTree = "<group>"; };
 		84AF23A815EE9792003FE221 /* GitHubber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AF23AC15EE9792003FE221 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84AF23AE15EE9792003FE221 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8497395415F28C6C00B2A4B7 /* libiphone_web.a in Frameworks */,
 				8447B85415F00BC500111D08 /* libRestKit.a in Frameworks */,
 				8447B85315F00BBD00111D08 /* QuartzCore.framework in Frameworks */,
 				8447B85115F00BB000111D08 /* libxml2.dylib in Frameworks */,
@@ -138,6 +166,8 @@
 		8447B80D15F0079E00111D08 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5860314C9881608E0ABA952D /* Singletons.m */,
+				58603336189D90E2165C315E /* Singletons.h */,
 				8447B82D15F008DA00111D08 /* Options.plist */,
 				84AF23BB15EE9792003FE221 /* AppDelegate.h */,
 				84AF23BC15EE9792003FE221 /* AppDelegate.m */,
@@ -148,21 +178,15 @@
 		8447B80E15F007A300111D08 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8497393D15F289D100B2A4B7 /* Views */,
 				8447B82115F008C200111D08 /* AuthController.h */,
 				8447B82215F008C200111D08 /* AuthController.m */,
 				8447B82315F008C200111D08 /* RepositoryListController.h */,
 				8447B82415F008C200111D08 /* RepositoryListController.m */,
+				849738D215F2765E00B2A4B7 /* RepositoryController.h */,
+				849738D315F2765E00B2A4B7 /* RepositoryController.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		8447B82815F008C600111D08 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8447B82915F008D000111D08 /* AuthController.xib */,
-				8447B82A15F008D000111D08 /* RepositoryListController.xib */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		8447B83015F00AFE00111D08 /* Products */ = {
@@ -180,6 +204,8 @@
 		8497387315F2047000B2A4B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5860304ADB0F269270DB73C7 /* Gravatar.h */,
+				5860373888E1C3121E731611 /* Gravatar.m */,
 				586036E846816016026B13EA /* KeychainItem.m */,
 				58603967CABCA46638B83B5E /* KeychainItem.h */,
 				586037BF5ED2F535F31A089F /* Authorization.m */,
@@ -190,6 +216,25 @@
 				8497387815F2077300B2A4B7 /* User.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		8497390C15F285DE00B2A4B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8497391415F285DE00B2A4B7 /* libiphone_web.a */,
+				8497391615F285DE00B2A4B7 /* libmac_web.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8497393D15F289D100B2A4B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8447B82915F008D000111D08 /* AuthController.xib */,
+				8447B82A15F008D000111D08 /* RepositoryListController.xib */,
+				849738D515F276E600B2A4B7 /* RepositoryController.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		84AF239D15EE9791003FE221 = {
@@ -212,6 +257,7 @@
 		84AF23AB15EE9792003FE221 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8497390B15F285DE00B2A4B7 /* iphone_web.xcodeproj */,
 				8447B85215F00BBD00111D08 /* QuartzCore.framework */,
 				8447B85015F00BB000111D08 /* libxml2.dylib */,
 				8447B84E15F00BA800111D08 /* SystemConfiguration.framework */,
@@ -232,7 +278,6 @@
 			children = (
 				8497387315F2047000B2A4B7 /* Models */,
 				8447B80E15F007A300111D08 /* Controllers */,
-				8447B82815F008C600111D08 /* Views */,
 				8447B80D15F0079E00111D08 /* Main */,
 				84AF23B315EE9792003FE221 /* Supporting Files */,
 			);
@@ -291,6 +336,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 8497390C15F285DE00B2A4B7 /* Products */;
+					ProjectRef = 8497390B15F285DE00B2A4B7 /* iphone_web.xcodeproj */;
+				},
+				{
 					ProductGroup = 8447B83015F00AFE00111D08 /* Products */;
 					ProjectRef = 8447B82F15F00AFE00111D08 /* RestKit.xcodeproj */;
 				},
@@ -338,6 +387,20 @@
 			remoteRef = 8447B84215F00AFF00111D08 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		8497391415F285DE00B2A4B7 /* libiphone_web.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiphone_web.a;
+			remoteRef = 8497391315F285DE00B2A4B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8497391615F285DE00B2A4B7 /* libmac_web.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmac_web.a;
+			remoteRef = 8497391515F285DE00B2A4B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -349,6 +412,7 @@
 				8447B82B15F008D000111D08 /* AuthController.xib in Resources */,
 				8447B82C15F008D000111D08 /* RepositoryListController.xib in Resources */,
 				8447B82E15F008DA00111D08 /* Options.plist in Resources */,
+				849738D615F276E600B2A4B7 /* RepositoryController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +431,9 @@
 				8497387915F2077300B2A4B7 /* User.m in Sources */,
 				586030310E8FB8A81F352B38 /* Authorization.m in Sources */,
 				5860389D3EC5BFFF69478C85 /* KeychainItem.m in Sources */,
+				849738D415F2765E00B2A4B7 /* RepositoryController.m in Sources */,
+				58603F685483191FD7C262D4 /* Singletons.m in Sources */,
+				586031E333224417B7E8B77F /* Gravatar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +524,7 @@
 				INFOPLIST_FILE = "GitHubber/GitHubber-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/RestKit\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/RestKit\"/** \"${PROJECT_DIR}/iphone_web\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -470,7 +537,7 @@
 				INFOPLIST_FILE = "GitHubber/GitHubber-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/RestKit\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/RestKit\"/** \"${PROJECT_DIR}/iphone_web\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
