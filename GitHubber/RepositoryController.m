@@ -4,6 +4,7 @@
 #import "ImageCache.h"
 #import "Singletons.h"
 #import "Gravatar.h"
+#import "CommitListController.h"
 
 #define DESC_LABEL_BOTTOM_MARGIN 10
 
@@ -30,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = repository.name;
+
     nameLabel.text = repository.name;
     descLabel.text = repository.desc;
     forksLabel.text = [NSString stringWithFormat:@"%d", [repository.forks integerValue]];
@@ -67,6 +70,8 @@
 
 - (IBAction)showCommits:(UIButton *)sender
 {
+    CommitListController *ctrl = [[CommitListController alloc] initWithRepository:repository];
+    [self.navigationController pushViewController:ctrl animated:YES];
 }
 
 #pragma mark Private

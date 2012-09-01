@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		586030310E8FB8A81F352B38 /* Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 586037BF5ED2F535F31A089F /* Authorization.m */; };
 		586031E333224417B7E8B77F /* Gravatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860373888E1C3121E731611 /* Gravatar.m */; };
+		5860352B37CEAA30179AA7E0 /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603173A2858B0E1FCA63E0 /* Commit.m */; };
 		5860389D3EC5BFFF69478C85 /* KeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 586036E846816016026B13EA /* KeychainItem.m */; };
+		58603BB4999F35596D445A74 /* UITableViewCell+NIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A2405FC5972E32A93A5 /* UITableViewCell+NIB.m */; };
 		58603F685483191FD7C262D4 /* Singletons.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860314C9881608E0ABA952D /* Singletons.m */; };
 		8447B82515F008C200111D08 /* AuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82215F008C200111D08 /* AuthController.m */; };
 		8447B82615F008C200111D08 /* RepositoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82415F008C200111D08 /* RepositoryListController.m */; };
@@ -29,6 +31,10 @@
 		849738D415F2765E00B2A4B7 /* RepositoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849738D315F2765E00B2A4B7 /* RepositoryController.m */; };
 		849738D615F276E600B2A4B7 /* RepositoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849738D515F276E600B2A4B7 /* RepositoryController.xib */; };
 		8497395415F28C6C00B2A4B7 /* libiphone_web.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497391415F285DE00B2A4B7 /* libiphone_web.a */; };
+		8497397E15F29A7B00B2A4B7 /* CommitListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497397C15F29A7B00B2A4B7 /* CommitListController.m */; };
+		8497397F15F29A7B00B2A4B7 /* CommitListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8497397D15F29A7B00B2A4B7 /* CommitListController.xib */; };
+		8497398315F2A11E00B2A4B7 /* CommitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497398215F2A11E00B2A4B7 /* CommitCell.m */; };
+		8497398515F2A14F00B2A4B7 /* CommitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8497398415F2A14F00B2A4B7 /* CommitCell.xib */; };
 		84AF23AD15EE9792003FE221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AC15EE9792003FE221 /* UIKit.framework */; };
 		84AF23AF15EE9792003FE221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23AE15EE9792003FE221 /* Foundation.framework */; };
 		84AF23B115EE9792003FE221 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF23B015EE9792003FE221 /* CoreGraphics.framework */; };
@@ -99,12 +105,16 @@
 /* Begin PBXFileReference section */
 		5860304ADB0F269270DB73C7 /* Gravatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gravatar.h; sourceTree = "<group>"; };
 		5860314C9881608E0ABA952D /* Singletons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singletons.m; sourceTree = "<group>"; };
+		58603173A2858B0E1FCA63E0 /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		58603336189D90E2165C315E /* Singletons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singletons.h; sourceTree = "<group>"; };
 		586036E846816016026B13EA /* KeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItem.m; sourceTree = "<group>"; };
 		5860373888E1C3121E731611 /* Gravatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gravatar.m; sourceTree = "<group>"; };
 		586037BF5ED2F535F31A089F /* Authorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authorization.m; sourceTree = "<group>"; };
 		58603967CABCA46638B83B5E /* KeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItem.h; sourceTree = "<group>"; };
+		586039C5E1A3DE2363E17A93 /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
+		58603A2405FC5972E32A93A5 /* UITableViewCell+NIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NIB.m"; sourceTree = "<group>"; };
 		58603A7E3D486FD6A1A886E9 /* Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authorization.h; sourceTree = "<group>"; };
+		58603EB1CD2B1C64CC021087 /* UITableViewCell+NIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+NIB.h"; sourceTree = "<group>"; };
 		8447B82115F008C200111D08 /* AuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthController.h; sourceTree = "<group>"; };
 		8447B82215F008C200111D08 /* AuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthController.m; sourceTree = "<group>"; };
 		8447B82315F008C200111D08 /* RepositoryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryListController.h; sourceTree = "<group>"; };
@@ -128,6 +138,12 @@
 		849738D315F2765E00B2A4B7 /* RepositoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryController.m; sourceTree = "<group>"; };
 		849738D515F276E600B2A4B7 /* RepositoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryController.xib; sourceTree = "<group>"; };
 		8497390B15F285DE00B2A4B7 /* iphone_web.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iphone_web.xcodeproj; path = iphone_web/iphone_web.xcodeproj; sourceTree = "<group>"; };
+		8497397B15F29A7B00B2A4B7 /* CommitListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitListController.h; sourceTree = "<group>"; };
+		8497397C15F29A7B00B2A4B7 /* CommitListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitListController.m; sourceTree = "<group>"; };
+		8497397D15F29A7B00B2A4B7 /* CommitListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitListController.xib; sourceTree = "<group>"; };
+		8497398115F2A11E00B2A4B7 /* CommitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitCell.h; sourceTree = "<group>"; };
+		8497398215F2A11E00B2A4B7 /* CommitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitCell.m; sourceTree = "<group>"; };
+		8497398415F2A14F00B2A4B7 /* CommitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitCell.xib; sourceTree = "<group>"; };
 		84AF23A815EE9792003FE221 /* GitHubber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AF23AC15EE9792003FE221 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84AF23AE15EE9792003FE221 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		586038377EA271D6CDD4007B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				58603EB1CD2B1C64CC021087 /* UITableViewCell+NIB.h */,
+				58603A2405FC5972E32A93A5 /* UITableViewCell+NIB.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		8447B80D15F0079E00111D08 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +203,7 @@
 		8447B80E15F007A300111D08 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8497398015F2A10700B2A4B7 /* Cells */,
 				8497393D15F289D100B2A4B7 /* Views */,
 				8447B82115F008C200111D08 /* AuthController.h */,
 				8447B82215F008C200111D08 /* AuthController.m */,
@@ -185,6 +211,9 @@
 				8447B82415F008C200111D08 /* RepositoryListController.m */,
 				849738D215F2765E00B2A4B7 /* RepositoryController.h */,
 				849738D315F2765E00B2A4B7 /* RepositoryController.m */,
+				8497397B15F29A7B00B2A4B7 /* CommitListController.h */,
+				8497397C15F29A7B00B2A4B7 /* CommitListController.m */,
+				586038377EA271D6CDD4007B /* Helpers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +233,8 @@
 		8497387315F2047000B2A4B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				586039C5E1A3DE2363E17A93 /* Commit.h */,
+				58603173A2858B0E1FCA63E0 /* Commit.m */,
 				5860304ADB0F269270DB73C7 /* Gravatar.h */,
 				5860373888E1C3121E731611 /* Gravatar.m */,
 				586036E846816016026B13EA /* KeychainItem.m */,
@@ -233,8 +264,19 @@
 				8447B82915F008D000111D08 /* AuthController.xib */,
 				8447B82A15F008D000111D08 /* RepositoryListController.xib */,
 				849738D515F276E600B2A4B7 /* RepositoryController.xib */,
+				8497397D15F29A7B00B2A4B7 /* CommitListController.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		8497398015F2A10700B2A4B7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8497398115F2A11E00B2A4B7 /* CommitCell.h */,
+				8497398215F2A11E00B2A4B7 /* CommitCell.m */,
+				8497398415F2A14F00B2A4B7 /* CommitCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		84AF239D15EE9791003FE221 = {
@@ -413,6 +455,8 @@
 				8447B82C15F008D000111D08 /* RepositoryListController.xib in Resources */,
 				8447B82E15F008DA00111D08 /* Options.plist in Resources */,
 				849738D615F276E600B2A4B7 /* RepositoryController.xib in Resources */,
+				8497397F15F29A7B00B2A4B7 /* CommitListController.xib in Resources */,
+				8497398515F2A14F00B2A4B7 /* CommitCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +478,10 @@
 				849738D415F2765E00B2A4B7 /* RepositoryController.m in Sources */,
 				58603F685483191FD7C262D4 /* Singletons.m in Sources */,
 				586031E333224417B7E8B77F /* Gravatar.m in Sources */,
+				5860352B37CEAA30179AA7E0 /* Commit.m in Sources */,
+				8497397E15F29A7B00B2A4B7 /* CommitListController.m in Sources */,
+				8497398315F2A11E00B2A4B7 /* CommitCell.m in Sources */,
+				58603BB4999F35596D445A74 /* UITableViewCell+NIB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

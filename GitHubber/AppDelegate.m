@@ -7,6 +7,7 @@
 #import "Authorization.h"
 #import "AuthController.h"
 #import "ImageCache.h"
+#import "Commit.h"
 
 @implementation AppDelegate
 @synthesize window;
@@ -58,6 +59,8 @@
     [objectManager.router routeClass:[User class] toResourcePath:@"/user" forMethod:RKRequestMethodGET];
 
     [objectManager.mappingProvider setObjectMapping:[Repository objectMapping] forResourcePathPattern:@"/user/repos"];
+
+    [objectManager.mappingProvider setObjectMapping:[Commit objectMapping] forResourcePathPattern:@"/repos/:user/:repo/commits"];
 
     [objectManager.mappingProvider setObjectMapping:[Authorization objectMapping] forResourcePathPattern:@"/authorizations"];
     [objectManager.mappingProvider setSerializationMapping:[Authorization inverseMapping] forClass:[Authorization class]];
