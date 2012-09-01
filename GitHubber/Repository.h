@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class User;
+@class RKObjectMapping;
 
 @interface Repository : NSObject
 
@@ -11,5 +12,7 @@
 @property (nonatomic, strong) NSNumber *watchers;
 
 @property (nonatomic, strong) User *owner;
+
++ (RKObjectMapping *)objectMapping;
 
 @end

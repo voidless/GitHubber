@@ -15,7 +15,7 @@
     [super viewDidLoad];
 
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [objectManager loadObjectsAtResourcePath:@"/users/voidless/repos" delegate:self];
+    [objectManager loadObjectsAtResourcePath:@"/user/repos" delegate:self];
 }
 
 - (void)viewDidUnload
@@ -24,7 +24,7 @@
     [super viewDidUnload];
 }
 
-#pragma mark RKObjectLoaderDelegate methods
+#pragma mark RKObjectLoaderDelegate
 
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response
 {

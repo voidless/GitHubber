@@ -1,8 +1,9 @@
 #import "AppDelegate.h"
 #import "AuthController.h"
 #import "Repository.h"
-#import "User.h"
-#import <RestKit/RestKit.h>
+#import "Authorization.h"
+#import "RestKit.h"
+#import "RKErrorMessage.h"
 
 @implementation AppDelegate
 
@@ -11,31 +12,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    RKLogConfigureByName("RestKit/Network*", RKLogLevelInfo);
-    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelInfo);
+    RKLogConfigureByName("RestKit/Network*", RKLogLevelWarning);
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelWarning);
 
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Options" ofType:@"plist"];
     NSDictionary *cfg = [NSDictionary dictionaryWithContentsOfFile:filePath];
     NSString *urlString = [cfg objectForKey:@"serverURL"];
 
     RKObjectManager *objectManager = [RKObjectManager managerWithBaseURLString:urlString];
+    objectManager.client.reachabilityObserver = [RKReachabilityObserver reachabilityObserverForHost:urlString];
     objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
-//    objectManager.client.authenticationType = RKRequestAuthenticationTypeOAuth2;
+    objectManager.acceptMIMEType = RKMIMETypeJSON;
+    objectManager.serializationMIMEType = RKMIMETypeJSON;
 
-    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
-    [userMapping mapAttributes:@"id", @"login", nil];
-    [userMapping mapKeyPath:@"avatar_url" toAttribute:@"avatarUrl"];
+    RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[RKErrorMessage class]];
+    [errorMapping mapKeyPath:@"message" toAttribute:@"errorMessage"];
+    objectManager.mappingProvider.errorMapping = errorMapping;
 
-    RKObjectMapping *repoMapping = [RKObjectMapping mappingForClass:[Repository class]];
-    [repoMapping mapAttributes:@"id", @"name", @"forks", @"watchers", nil];
-    [repoMapping mapKeyPathsToAttributes:@"description", @"desc",
-                                         @"owner[login]", @"owner_login",
-                                         @"owner[avatar_url]", @"owner_avatar_url",
-                                         nil];
-    [repoMapping mapRelationship:@"owner" withMapping:userMapping];
-
+    RKObjectMapping *repoMapping = [Repository objectMapping];
     [objectManager.mappingProvider setObjectMapping:repoMapping forResourcePathPattern:@"/user/repos"];
     [objectManager.mappingProvider setObjectMapping:repoMapping forResourcePathPattern:@"/users/:user/repos"];
+
+    [objectManager.mappingProvider setObjectMapping:[Authorization objectMapping] forResourcePathPattern:@"/authorizations"];
+    [objectManager.mappingProvider setSerializationMapping:[Authorization inverseMapping] forClass:[Authorization class]];
+
+    RKObjectRouter *router = objectManager.router;
+    [router routeClass:[Authorization class] toResourcePath:@"/authorizations" forMethod:RKRequestMethodGET];
+    [router routeClass:[Authorization class] toResourcePath:@"/authorizations" forMethod:RKRequestMethodPOST];
 
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
