@@ -1,5 +1,6 @@
 #import "AuthController.h"
 #import "RepositoryListController.h"
+#import <RestKit/RestKit.h>
 
 @interface AuthController ()
 @end
