@@ -1,10 +1,10 @@
 #import "CommitListController.h"
 #import "Repository.h"
-#import "Commit.h"
-#import "User.h"
 #import "RestKit.h"
 #import "CommitCell.h"
 #import "UITableViewCell+NIB.h"
+#import "ApiManager.h"
+#import "Singletons.h"
 
 @interface CommitListController () <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
 @end
@@ -12,7 +12,7 @@
 @implementation CommitListController {
     Repository *repository;
     NSArray *commits;
-    RKObjectManager *objectManager;
+    ApiManager *apiManager;
 }
 @synthesize tableView;
 
@@ -27,14 +27,14 @@
 - (id)init
 {
     if ((self = [super init])) {
-        objectManager = [RKObjectManager sharedManager];
+        apiManager = [ApiManager shared];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [objectManager.requestQueue cancelRequestsWithDelegate:self];
+    [apiManager cancelRequestsWithDelegate:self];
 }
 
 - (void)viewDidLoad
@@ -42,8 +42,7 @@
     [super viewDidLoad];
     self.title = [NSString stringWithFormat:@"%@ commits", repository.name];
 
-    NSString *resourcePath = [NSString stringWithFormat:@"/repos/%@/%@/commits", repository.owner.login, repository.name];
-    [objectManager loadObjectsAtResourcePath:resourcePath delegate:self];
+    [apiManager loadCommitsFromRepository:repository withDelegate:self];
 }
 
 - (void)viewDidUnload

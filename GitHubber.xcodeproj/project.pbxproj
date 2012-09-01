@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		586030310E8FB8A81F352B38 /* Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 586037BF5ED2F535F31A089F /* Authorization.m */; };
+		5860317340E2CCC159C2B965 /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860324325247E33991A1689 /* ApiManager.m */; };
 		586031E333224417B7E8B77F /* Gravatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860373888E1C3121E731611 /* Gravatar.m */; };
 		5860352B37CEAA30179AA7E0 /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603173A2858B0E1FCA63E0 /* Commit.m */; };
 		5860389D3EC5BFFF69478C85 /* KeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 586036E846816016026B13EA /* KeychainItem.m */; };
@@ -106,7 +107,9 @@
 		5860304ADB0F269270DB73C7 /* Gravatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gravatar.h; sourceTree = "<group>"; };
 		5860314C9881608E0ABA952D /* Singletons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singletons.m; sourceTree = "<group>"; };
 		58603173A2858B0E1FCA63E0 /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
+		5860324325247E33991A1689 /* ApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiManager.m; sourceTree = "<group>"; };
 		58603336189D90E2165C315E /* Singletons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singletons.h; sourceTree = "<group>"; };
+		58603686A6841926BE43B123 /* ApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
 		586036E846816016026B13EA /* KeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItem.m; sourceTree = "<group>"; };
 		5860373888E1C3121E731611 /* Gravatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gravatar.m; sourceTree = "<group>"; };
 		586037BF5ED2F535F31A089F /* Authorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authorization.m; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 		8497387315F2047000B2A4B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				58603686A6841926BE43B123 /* ApiManager.h */,
+				5860324325247E33991A1689 /* ApiManager.m */,
 				586039C5E1A3DE2363E17A93 /* Commit.h */,
 				58603173A2858B0E1FCA63E0 /* Commit.m */,
 				5860304ADB0F269270DB73C7 /* Gravatar.h */,
@@ -482,6 +487,7 @@
 				8497397E15F29A7B00B2A4B7 /* CommitListController.m in Sources */,
 				8497398315F2A11E00B2A4B7 /* CommitCell.m in Sources */,
 				58603BB4999F35596D445A74 /* UITableViewCell+NIB.m in Sources */,
+				5860317340E2CCC159C2B965 /* ApiManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

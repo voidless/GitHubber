@@ -7,3 +7,10 @@
     return [AppDelegate shared].imageCache;
 }
 @end
+
+@implementation ApiManager (Singleton)
++ (ApiManager *)shared
+{
+    return [AppDelegate shared].apiManager;
+}
+@end

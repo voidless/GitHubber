@@ -2,35 +2,36 @@
 #import "Repository.h"
 #import "RestKit.h"
 #import "RepositoryController.h"
+#import "ApiManager.h"
+#import "Singletons.h"
 
 @interface RepositoryListController () <RKObjectLoaderDelegate, UITableViewDataSource, UITableViewDelegate>
 @end
 
 @implementation RepositoryListController {
     NSArray *repositories;
-    RKObjectManager *objectManager;
+    ApiManager *apiManager;
 }
 @synthesize tableView;
 
 - (id)init
 {
     if ((self = [super init])) {
-        objectManager = [RKObjectManager sharedManager];
+        apiManager = [ApiManager shared];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [objectManager.requestQueue cancelRequestsWithDelegate:self];
+    [apiManager cancelRequestsWithDelegate:self];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"Repositories";
-
-    [objectManager loadObjectsAtResourcePath:@"/user/repos" delegate:self];
+    [apiManager loadRepositoriesWithDelegate:self];
 }
 
 - (void)viewDidUnload

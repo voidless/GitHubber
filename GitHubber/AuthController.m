@@ -3,13 +3,15 @@
 #import "Authorization.h"
 #import "KeychainItem.h"
 #import "RestKit.h"
+#import "ApiManager.h"
+#import "Singletons.h"
 
 @interface AuthController () <UITextFieldDelegate, RKObjectLoaderDelegate>
 @end
 
 @implementation AuthController {
     Authorization *authorization;
-    RKObjectManager *objectManager;
+    ApiManager *apiManager;
     CGFloat keyboardHeight;
     KeychainItem *keychainItem;
 }
@@ -37,14 +39,14 @@
 - (id)init
 {
     if ((self = [super init])) {
-        objectManager = [RKObjectManager sharedManager];
+        apiManager = [ApiManager shared];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [objectManager.requestQueue cancelRequestsWithDelegate:self];
+    [apiManager cancelRequestsWithDelegate:self];
 }
 
 - (void)viewDidLoad
@@ -89,9 +91,7 @@
 - (void)setupManagerWithAuth:(Authorization *)auth
 {
     authorization = auth;
-
-    objectManager.client.authenticationType = RKRequestAuthenticationTypeOAuth2;
-    objectManager.client.OAuth2AccessToken = authorization.token;
+    [apiManager setupOAuth2:authorization];
 }
 
 - (void)showRepositoryList
@@ -144,14 +144,12 @@
 
 - (IBAction)logIn:(UIButton *)sender
 {
-    objectManager.client.authenticationType = RKRequestAuthenticationTypeHTTPBasic;
-    objectManager.client.username = loginTextField.text;
-    objectManager.client.password = passwordTextField.text;
+    [apiManager setupBasicAuthWithUsername:loginTextField.text password:passwordTextField.text];
 
     Authorization *auth = [Authorization new];
     auth.note = @"GitHubber";
     auth.scopes = [NSArray arrayWithObjects:@"repo", nil];
-    [objectManager postObject:auth delegate:self];
+    [apiManager postAuthorization:auth withDelegate:self];
     [self loading];
 }
 
