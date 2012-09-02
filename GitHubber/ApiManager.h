@@ -27,4 +27,8 @@
 #pragma mark Commits
 - (void)loadCommitsFromRepository:(Repository *)repository withDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
+#pragma mark Arbitrary resource url
+
+- (void)loadObjectsAtURLString:(NSString *)urlString withDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
 @end

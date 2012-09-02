@@ -11,7 +11,9 @@
 		5860317340E2CCC159C2B965 /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860324325247E33991A1689 /* ApiManager.m */; };
 		586031E333224417B7E8B77F /* Gravatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860373888E1C3121E731611 /* Gravatar.m */; };
 		5860352B37CEAA30179AA7E0 /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603173A2858B0E1FCA63E0 /* Commit.m */; };
+		586035BC19373885C4049684 /* NSIndexPath+Array.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860375565955BD2B6AFAF0C /* NSIndexPath+Array.m */; };
 		5860389D3EC5BFFF69478C85 /* KeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 586036E846816016026B13EA /* KeychainItem.m */; };
+		58603B32954399770616E522 /* LinkHTTPHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 586036130283780ED80153A9 /* LinkHTTPHeader.m */; };
 		58603BB4999F35596D445A74 /* UITableViewCell+NIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A2405FC5972E32A93A5 /* UITableViewCell+NIB.m */; };
 		58603F685483191FD7C262D4 /* Singletons.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860314C9881608E0ABA952D /* Singletons.m */; };
 		8447B82515F008C200111D08 /* AuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447B82215F008C200111D08 /* AuthController.m */; };
@@ -109,11 +111,15 @@
 		58603173A2858B0E1FCA63E0 /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		5860324325247E33991A1689 /* ApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiManager.m; sourceTree = "<group>"; };
 		58603336189D90E2165C315E /* Singletons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singletons.h; sourceTree = "<group>"; };
+		586036130283780ED80153A9 /* LinkHTTPHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkHTTPHeader.m; sourceTree = "<group>"; };
 		58603686A6841926BE43B123 /* ApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
 		586036E846816016026B13EA /* KeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItem.m; sourceTree = "<group>"; };
 		5860373888E1C3121E731611 /* Gravatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gravatar.m; sourceTree = "<group>"; };
+		5860375565955BD2B6AFAF0C /* NSIndexPath+Array.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+Array.m"; sourceTree = "<group>"; };
+		586037ADFAABDF50F282B408 /* LinkHTTPHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkHTTPHeader.h; sourceTree = "<group>"; };
 		586037BF5ED2F535F31A089F /* Authorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authorization.m; sourceTree = "<group>"; };
 		58603967CABCA46638B83B5E /* KeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItem.h; sourceTree = "<group>"; };
+		58603969C7E29A88B6CE6718 /* NSIndexPath+Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Array.h"; sourceTree = "<group>"; };
 		586039C5E1A3DE2363E17A93 /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		58603A2405FC5972E32A93A5 /* UITableViewCell+NIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NIB.m"; sourceTree = "<group>"; };
 		58603A7E3D486FD6A1A886E9 /* Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authorization.h; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 		586038377EA271D6CDD4007B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				58603969C7E29A88B6CE6718 /* NSIndexPath+Array.h */,
+				5860375565955BD2B6AFAF0C /* NSIndexPath+Array.m */,
 				58603EB1CD2B1C64CC021087 /* UITableViewCell+NIB.h */,
 				58603A2405FC5972E32A93A5 /* UITableViewCell+NIB.m */,
 			);
@@ -236,6 +244,8 @@
 		8497387315F2047000B2A4B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				586037ADFAABDF50F282B408 /* LinkHTTPHeader.h */,
+				586036130283780ED80153A9 /* LinkHTTPHeader.m */,
 				58603686A6841926BE43B123 /* ApiManager.h */,
 				5860324325247E33991A1689 /* ApiManager.m */,
 				586039C5E1A3DE2363E17A93 /* Commit.h */,
@@ -488,6 +498,8 @@
 				8497398315F2A11E00B2A4B7 /* CommitCell.m in Sources */,
 				58603BB4999F35596D445A74 /* UITableViewCell+NIB.m in Sources */,
 				5860317340E2CCC159C2B965 /* ApiManager.m in Sources */,
+				58603B32954399770616E522 /* LinkHTTPHeader.m in Sources */,
+				586035BC19373885C4049684 /* NSIndexPath+Array.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -102,4 +102,12 @@
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
 
+#pragma mark Arbitrary resource url
+
+- (void)loadObjectsAtURLString:(NSString *)urlString withDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+    NSString *relative = [urlString stringByReplacingOccurrencesOfString:objectManager.baseURL.absoluteString withString:@""];
+    [objectManager loadObjectsAtResourcePath:relative delegate:delegate];
+}
+
 @end

@@ -4,13 +4,16 @@
 #import "RepositoryController.h"
 #import "ApiManager.h"
 #import "Singletons.h"
+#import "LinkHTTPHeader.h"
+#import "NSIndexPath+Array.h"
 
 @interface RepositoryListController () <RKObjectLoaderDelegate, UITableViewDataSource, UITableViewDelegate>
 @end
 
 @implementation RepositoryListController {
-    NSArray *repositories;
+    NSMutableArray *repositories;
     ApiManager *apiManager;
+    LinkHTTPHeader *links;
 }
 @synthesize tableView;
 
@@ -18,6 +21,7 @@
 {
     if ((self = [super init])) {
         apiManager = [ApiManager shared];
+        repositories = [NSMutableArray new];
     }
     return self;
 }
@@ -44,8 +48,11 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    repositories = objects;
-    [tableView reloadData];
+    links = [LinkHTTPHeader linkHTTPHeaderFromHeaders:objectLoader.response.allHeaderFields];
+
+    NSArray *indexPaths = [NSIndexPath indexPathsWithRange:NSMakeRange(repositories.count, objects.count) inSection:0];
+    [repositories addObjectsFromArray:objects];
+    [tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
@@ -59,11 +66,18 @@
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section
 {
-    return [repositories count];
+    return repositories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == repositories.count - 1) {
+        NSString *nextUrlString = [links linkForRel:@"next"];
+        if (nextUrlString.length) {
+            [apiManager loadObjectsAtURLString:nextUrlString withDelegate:self];
+        }
+    }
+
     NSString *reuseIdentifier = @"Repository Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (nil == cell) {
