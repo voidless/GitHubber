@@ -1,7 +1,6 @@
 #import "RepositoryController.h"
 #import "Repository.h"
 #import "User.h"
-#import "ImageCache.h"
 #import "Singletons.h"
 #import "Gravatar.h"
 #import "CommitListController.h"
@@ -39,7 +38,7 @@
     watchersLabel.text = [NSString stringWithFormat:@"%d", [repository.watchers integerValue]];
     ownerLabel.text = repository.owner.login;
 
-    NSUInteger imageSize = (NSUInteger) ([UIScreen mainScreen].scale * 100);
+    NSUInteger imageSize = (NSUInteger) ([UIScreen mainScreen].scale * imageView.bounds.size.width);
     [self loadOwnerAvatarWithURL:[repository.owner.gravatar imageURLWithSize:imageSize]];
 
     [descLabel sizeToFit];

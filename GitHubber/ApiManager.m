@@ -20,12 +20,12 @@
 {
     if ((self = [super init])) {
 #if TARGET_IPHONE_SIMULATOR
-        RKLogConfigureByName("RestKit/Network*", RKLogLevelWarning);
-        RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelWarning);
+        RKLogConfigureByName("RestKit*", RKLogLevelWarning);
 #endif
         objectManager = [RKObjectManager managerWithBaseURLString:urlString];
         objectManager.client.reachabilityObserver = [RKReachabilityObserver reachabilityObserverForHost:urlString];
         objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
+        objectManager.client.cachePolicy = RKRequestCachePolicyEtag | RKRequestCachePolicyLoadIfOffline;
         objectManager.acceptMIMEType = RKMIMETypeJSON;
         objectManager.serializationMIMEType = RKMIMETypeJSON;
 
@@ -56,12 +56,19 @@
     [objectManager.requestQueue cancelRequestsWithDelegate:controller];
 }
 
+#pragma mark Clear cache (for logout)
+
+- (void)clearCache
+{
+    [objectManager.requestCache invalidateAll];
+}
+
 #pragma mark Setup auth
 
-- (void)setupOAuth2:(Authorization *)auth
+- (void)setupOAuth2WithToken:(NSString *)token
 {
     objectManager.client.authenticationType = RKRequestAuthenticationTypeOAuth2;
-    objectManager.client.OAuth2AccessToken = auth.token;
+    objectManager.client.OAuth2AccessToken = token;
 }
 
 - (void)setupBasicAuthWithUsername:(NSString *)username password:(NSString *)password

@@ -40,6 +40,7 @@
 {
     if ((self = [super init])) {
         apiManager = [ApiManager shared];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestDidLoadResponse:) name:RKRequestDidLoadResponseNotification object:nil];
     }
     return self;
 }
@@ -47,6 +48,7 @@
 - (void)dealloc
 {
     [apiManager cancelRequestsWithDelegate:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKRequestDidLoadResponseNotification object:nil];
 }
 
 - (void)viewDidLoad
@@ -86,12 +88,41 @@
     [self unregisterKeyboardNotifications];
 }
 
+#pragma mark Actions
+
+- (IBAction)showRepositories:(UIButton *)sender
+{
+    [self showRepositoryList];
+}
+
+- (IBAction)logIn:(UIButton *)sender
+{
+    [apiManager setupBasicAuthWithUsername:loginTextField.text password:passwordTextField.text];
+    passwordTextField.text = nil;
+
+    Authorization *auth = [Authorization new];
+    auth.note = @"GitHubber";
+    auth.scopes = [NSArray arrayWithObjects:@"repo", nil];
+    [apiManager postAuthorization:auth withDelegate:self];
+    [self loading];
+}
+
+- (IBAction)logOut:(UIButton *)sender
+{
+    [self loggedOut];
+}
+
+- (IBAction)resignEditing:(id)sender
+{
+    [authView endEditing:NO];
+}
+
 #pragma mark Private
 
 - (void)setupManagerWithAuth:(Authorization *)auth
 {
     authorization = auth;
-    [apiManager setupOAuth2:authorization];
+    [apiManager setupOAuth2WithToken:authorization.token];
 }
 
 - (void)showRepositoryList
@@ -114,6 +145,10 @@
 
 - (void)loggedOut
 {
+    authorization = nil;
+    [keychainItem delete];
+    [apiManager clearCache];
+
     [loggedView removeFromSuperview];
     loadingView.hidden = YES;
 
@@ -135,34 +170,15 @@
     loginButton.enabled = loginTextField.text.length && passwordTextField.text.length;
 }
 
-#pragma mark Actions
+#pragma mark NotificationCenter
 
-- (IBAction)showRepositories:(UIButton *)sender
+- (void)requestDidLoadResponse:(NSNotification *)notification
 {
-    [self showRepositoryList];
-}
-
-- (IBAction)logIn:(UIButton *)sender
-{
-    [apiManager setupBasicAuthWithUsername:loginTextField.text password:passwordTextField.text];
-
-    Authorization *auth = [Authorization new];
-    auth.note = @"GitHubber";
-    auth.scopes = [NSArray arrayWithObjects:@"repo", nil];
-    [apiManager postAuthorization:auth withDelegate:self];
-    [self loading];
-}
-
-- (IBAction)logOut:(UIButton *)sender
-{
-    authorization = nil;
-    [keychainItem delete];
-    [self loggedOut];
-}
-
-- (IBAction)resignEditing:(id)sender
-{
-    [authView endEditing:NO];
+    RKResponse *resp = [notification.userInfo objectForKey:RKRequestDidLoadResponseNotificationUserInfoResponseKey];
+    if (resp.isUnauthorized) {
+        [self.navigationController popToViewController:self animated:YES];
+        [self loggedOut];
+    }
 }
 
 #pragma mark RKObjectLoaderDelegate
@@ -218,7 +234,8 @@
 
 - (void)unregisterKeyboardNotifications
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)keyboardWillShow:(NSNotification *)aNotification
