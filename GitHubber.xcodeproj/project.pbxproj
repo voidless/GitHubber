@@ -188,7 +188,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		586038377EA271D6CDD4007B /* Helpers */ = {
+		586038377EA271D6CDD4007B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				58603969C7E29A88B6CE6718 /* NSIndexPath+Array.h */,
@@ -196,7 +196,7 @@
 				58603EB1CD2B1C64CC021087 /* UITableViewCell+NIB.h */,
 				58603A2405FC5972E32A93A5 /* UITableViewCell+NIB.m */,
 			);
-			name = Helpers;
+			name = Tools;
 			sourceTree = "<group>";
 		};
 		8447B80D15F0079E00111D08 /* Main */ = {
@@ -224,7 +224,6 @@
 				849738D315F2765E00B2A4B7 /* RepositoryController.m */,
 				8497397B15F29A7B00B2A4B7 /* CommitListController.h */,
 				8497397C15F29A7B00B2A4B7 /* CommitListController.m */,
-				586038377EA271D6CDD4007B /* Helpers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +332,7 @@
 		84AF23B215EE9792003FE221 /* GitHubber */ = {
 			isa = PBXGroup;
 			children = (
+				586038377EA271D6CDD4007B /* Tools */,
 				8497387315F2047000B2A4B7 /* Models */,
 				8447B80E15F007A300111D08 /* Controllers */,
 				8447B80D15F0079E00111D08 /* Main */,
